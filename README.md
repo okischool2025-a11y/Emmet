@@ -22,13 +22,3 @@
 | `@-`         | Обратная нумерация            | `item$@-*3`                 |
 | `!`          | HTML5 boilerplate             | `!`                         |
 
----
-
-## Пример использования
-
-```html
-<ul>
-  <li class="item1">Пункт 1</li>
-  <li class="item2">Пункт 2</li>
-  <li class="item3">Пункт 3</li>
-</ul>
