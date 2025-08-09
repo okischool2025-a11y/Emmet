@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emmet для HTML — шпаргалка</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f7fa;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #4a90e2;
+        margin-bottom: 30px;
+      }
+      .emmet-list {
+        max-width: 900px;
+        margin: auto;
+        display: grid;
+        gap: 20px;
+      }
+      .emmet-item {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+      }
+      .command {
+        font-weight: 700;
+        font-size: 1.4em;
+        color: #e94e77;
+      }
+      .description {
+        margin: 8px 0 15px 0;
+        font-weight: 600;
+      }
+      .example {
+        font-family: monospace;
+        background: #eef3f7;
+        border-radius: 6px;
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+      .result {
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px;
+      }
+      .result > * {
+        margin: 4px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Emmet команди для HTML</h1>
+
+    <div class="emmet-list">
+      <div class="emmet-item">
+        <div class="command">&gt;</div>
+        <div class="description">Дочірній елемент</div>
+        <div class="example">nav&gt;ul&gt;li</div>
+        <div class="result">
+          <nav>
+            <ul>
+              <li>Пункт списку</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">+</div>
+        <div class="description">Сусідній елемент</div>
+        <div class="example">div{Блок}+p{Текстовий абзац}</div>
+        <div class="result">
+          <div>Блок</div>
+          <p>Текстовий абзац</p>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">^</div>
+        <div class="description">Піднятися на рівень вище (вкладеність)</div>
+        <div class="example">div&gt;p&gt;span^blockquote{Цитата}</div>
+        <div class="result">
+          <div>
+            <p><span>Вкладений текст</span></p>
+            <blockquote>Цитата</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">*</div>
+        <div class="description">Повторення елементів</div>
+        <div class="example">ul&gt;li*3{Пункт $}</div>
+        <div class="result">
+          <ul>
+            <li>Пункт 1</li>
+            <li>Пункт 2</li>
+            <li>Пункт 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">()</div>
+        <div class="description">Групування елементів</div>
+        <div class="example">(div&gt;h2{Заголовок})+(div&gt;p{Параграф})</div>
+        <div class="result">
+          <div><h2>Заголовок</h2></div>
+          <div><p>Параграф</p></div>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">#id</div>
+        <div class="description">Додати ID</div>
+        <div class="example">div#main{Основний блок}</div>
+        <div class="result">
+          <div id="main">Основний блок</div>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">.class</div>
+        <div class="description">Додати клас</div>
+        <div class="example">p.note{Примітка}</div>
+        <div class="result">
+          <p class="note">Примітка</p>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">[attr="value"]</div>
+        <div class="description">Додати атрибут</div>
+        <div class="example">img[src="img.jpg"][alt="Фото"]</div>
+        <div class="result">
+          <img src="https://i.gifer.com/1nUy.gif" alt="Фото" width="100%" />
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">{текст}</div>
+        <div class="description">Текст всередині елемента</div>
+        <div class="example">a{Натисни тут}</div>
+        <div class="result">
+          <a href="#">Натисни тут</a>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">$</div>
+        <div class="description">Нумерація елементів</div>
+        <div class="example">ul&gt;li.item$*3{Пункт $}</div>
+        <div class="result">
+          <ul>
+            <li class="item1">Пункт 1</li>
+            <li class="item2">Пункт 2</li>
+            <li class="item3">Пункт 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">$$</div>
+        <div class="description">Нумерація з ведучими нулями</div>
+        <div class="example">div.item$$*3{Елемент $$}</div>
+        <div class="result">
+          <div class="item01">Елемент 01</div>
+          <div class="item02">Елемент 02</div>
+          <div class="item03">Елемент 03</div>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">@-</div>
+        <div class="description">Зворотна нумерація</div>
+        <div class="example">div.item$@-*3{Елемент $}</div>
+        <div class="result">
+          <div class="item3">Елемент 3</div>
+          <div class="item2">Елемент 2</div>
+          <div class="item1">Елемент 1</div>
+        </div>
+      </div>
+
+      <div class="emmet-item">
+        <div class="command">!</div>
+        <div class="description">HTML5 boilerplate (шаблон)</div>
+        <div class="example">!</div>
+        <div
+          class="result"
+          style="
+            font-family: monospace;
+            white-space: pre-wrap;
+            background: #eef3f7;
+            padding: 10px;
+            border-radius: 6px;
+          "
+        >
+          &lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt; &lt;meta
+          charset="UTF-8"&gt; &lt;meta name="viewport"
+          content="width=device-width, initial-scale=1.0"&gt;
+          &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt;
+          &lt;/body&gt; &lt;/html&gt;
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
